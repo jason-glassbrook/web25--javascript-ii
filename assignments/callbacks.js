@@ -38,7 +38,9 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
-///=== CHALLENGE 1 ===///
+///#####################################
+/// CHALLENGE 1
+///#####################################
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
@@ -46,7 +48,9 @@ function getLength(arr, cb) {
 
 
 
-///=== CHALLENGE 2 ===///
+///#####################################
+/// CHALLENGE 2
+///#####################################
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
@@ -54,7 +58,9 @@ function last(arr, cb) {
 
 
 
-///=== CHALLENGE 3 ===///
+///#####################################
+/// CHALLENGE 3
+///#####################################
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
@@ -62,7 +68,9 @@ function sumNums(x, y, cb) {
 
 
 
-///=== CHALLENGE 4 ===///
+///#####################################
+/// CHALLENGE 4
+///#####################################
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
@@ -70,7 +78,9 @@ function multiplyNums(x, y, cb) {
 
 
 
-///=== CHALLENGE 4 ===///
+///#####################################
+/// CHALLENGE 4
+///#####################################
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
@@ -79,7 +89,9 @@ function contains(item, list, cb) {
 
 
 
-///=== STRETCH ===///
+///#####################################
+/// STRETCH
+///#####################################
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
