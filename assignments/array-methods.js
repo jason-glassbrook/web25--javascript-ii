@@ -62,23 +62,14 @@ const runners = [
 function heading (content) {
   console.log (`\n### ${content} ###\n`);
 }
+
 function nextProblem (content) {
   n += 1;
   heading (`${content} ${n}`);
   test[n] = {};
 }
-function testProblem (testFn , testArgs , talkFn) {
-  return ({
-    testFn   : testFn ,
-    testArgs : testArgs ,
-    talkFn   : talkFn ,
-    result   : testFn (...testArgs , talkFn)
-  });
-}
-const repeatAfterMe = (val) => (`You gave me:\n${val}`);
 
 let n = 0;
-const test = [];
 
 ///#####################################
 /// CHALLENGE 1
