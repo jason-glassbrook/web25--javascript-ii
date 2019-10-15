@@ -123,10 +123,10 @@ nextProblem ("CHALLENGE");
 function contains (item , list , cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  return cb (item , list);
+  return cb (list.includes (item));
 }
 
-test[n] = testProblem (contains , repeatBackToMe , [items[2] , items]);
+test[n] = testProblem (contains , repeatBackToMe , ["Gum" , items]);
 console.log (test[n].result);
 
 ///#####################################
