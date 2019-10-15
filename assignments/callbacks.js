@@ -38,6 +38,14 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
+function heading (content) {
+  console.log (`\n### ${content} ###\n`);
+}
+function nextProblem (content) {
+  n += 1;
+  heading (`${content} ${n}`);
+}
+
 let n = 0;
 const test = [];
 
@@ -45,8 +53,7 @@ const test = [];
 /// CHALLENGE 1
 ///#####################################
 
-n += 1;
-console.log (`\n### CHALLENGE ${n} ###\n`);
+nextProblem ("CHALLENGE");
 
 function getLength (arr, cb) {
   // getLength passes the length of the array into the callback.
@@ -64,8 +71,7 @@ console.log (test[n].result);
 /// CHALLENGE 2
 ///#####################################
 
-n += 1;
-console.log (`\n### CHALLENGE ${n} ###\n`);
+nextProblem ("CHALLENGE");
 
 function last (arr, cb) {
   // last passes the last item of the array into the callback.
@@ -83,8 +89,7 @@ console.log (test[n].result);
 /// CHALLENGE 3
 ///#####################################
 
-n += 1;
-console.log (`\n### CHALLENGE ${n} ###\n`);
+nextProblem ("CHALLENGE");
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
@@ -96,8 +101,7 @@ function sumNums(x, y, cb) {
 /// CHALLENGE 4
 ///#####################################
 
-n += 1;
-console.log (`\n### CHALLENGE ${n} ###\n`);
+nextProblem ("CHALLENGE");
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
@@ -106,11 +110,10 @@ function multiplyNums(x, y, cb) {
 
 
 ///#####################################
-/// CHALLENGE 4
+/// CHALLENGE 5
 ///#####################################
 
-n += 1;
-console.log (`\n### CHALLENGE ${n} ###\n`);
+nextProblem ("CHALLENGE");
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
@@ -120,8 +123,10 @@ function contains(item, list, cb) {
 
 
 ///#####################################
-/// STRETCH
+/// STRETCH -> CHALLENGE
 ///#####################################
+
+nextProblem ("(STRETCH) CHALLENGE");
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
