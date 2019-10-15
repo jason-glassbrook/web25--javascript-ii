@@ -112,7 +112,7 @@ nextProblem ("CHALLENGE");
 
 let firstNamesAllCaps = runners.map(
   (elem) => {
-    return elem.first_name.toUpperCase ();
+    return (elem.first_name.toUpperCase ());
   }
 );
 
@@ -128,7 +128,12 @@ nextProblem ("CHALLENGE");
 
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 
-let runnersLargeSizeShirt = [];
+let runnersLargeSizeShirt = runners.filter(
+  (elem) => {
+    return (elem.shirt_size === "L");
+  }
+);
+
 console.log(runnersLargeSizeShirt);
 
 ///#####################################
