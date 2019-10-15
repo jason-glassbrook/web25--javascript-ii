@@ -167,6 +167,12 @@ nextProblem ("CHALLENGE");
 
 let m = 0;
 
+// there are probably more efficient ways of doing this...
+const isUnique =
+  (ce , cx , pa) => (pa.indexOf (ce) === cx);
+const onlyUniqueSet =
+  (array) => (array.filter (isUnique));
+
 // Problem 1
 heading (`PROBLEM ${m += 1}`);
 
