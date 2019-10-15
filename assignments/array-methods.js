@@ -169,15 +169,36 @@ let m = 0;
 
 // there are probably more efficient ways of doing this...
 const isUnique =
-  (ce , cx , pa) => (pa.indexOf (ce) === cx);
+  (elem , index , array) => (array.indexOf (elem) === index);
 const onlyUniqueSet =
   (array) => (array.filter (isUnique));
 
-// Problem 1
+///#################
+/// Problem 1
+///-----------------
+/// Get average donation.
+///#################
+
 heading (`PROBLEM ${m += 1}`);
 
-// Problem 2
+const averageDonation = runners.reduce(
+  (init , elem) => (init + elem.donation)
+, 0) / runners.length;
+
+console.log (averageDonation);
+
+///#################
+/// Problem 2
+///-----------------
+/// Get only runners whose company starts with a specific letter.
+///#################
+
 heading (`PROBLEM ${m += 1}`);
 
-// Problem 3
+///#################
+/// Problem 3
+///-----------------
+/// 
+///#################
+
 heading (`PROBLEM ${m += 1}`);
