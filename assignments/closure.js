@@ -39,7 +39,17 @@ nextProblem ("CHALLENGE");
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
-// I actually already did this with `nextProblem()` above, but I'll do another one.
+// I actually already did this with `nextProblem()` above, but I'll do another one...
+let value = 55 ;
+console.log (`\`value\` BEFORE \`myClosure()\` is called:\n${value}`);
+
+const myClosure = function (x , fn) {
+  value = fn (value , x);
+  console.log ("\nI did something to the value!\n");
+};
+
+myClosure (14 , (a , b) => (a / b));
+console.log (`\`value\` AFTER \`myClosure()\` is called:\n${value}`);
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
