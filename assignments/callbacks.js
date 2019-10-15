@@ -46,11 +46,14 @@ function nextProblem (content) {
   heading (`${content} ${n}`);
   test[n] = {};
 }
-function testProblem (n , outerFn , innerFn , data) {
-  test[n].outerFn = outerFn;
-  test[n].innerFn = innerFn;
-  test[n].result  = outerFn (items , innerFn);
+function testProblem (outerFn , innerFn , data) {
+  return ({
+    outerFn : outerFn ,
+    innerFn : innerFn ,
+    result  : outerFn (data , innerFn)
+  });
 }
+const repeatBackToMe = (val) => (`You gave me:\n${val}`);
 
 let n = 0;
 const test = [];
@@ -66,10 +69,7 @@ function getLength (arr, cb) {
   return cb (arr.length);
 }
 
-test[n].outerFn = getLength ;
-test[n].innerFn = (val) => (`You gave me:\n${val}`);
-test[n].result  = test[n].outerFn (items , test[n].innerFn);
-
+test[n] = testProblem (getLength , repeatBackToMe , items);
 console.log (test[n].result);
 
 ///#####################################
@@ -83,10 +83,7 @@ function last (arr, cb) {
   return cb (arr[arr.length - 1]) ;
 }
 
-test[n].outerFn = last ;
-test[n].innerFn = (val) => (`You gave me:\n${val}`);
-test[n].result  = test[n].outerFn (items , test[n].innerFn);
-
+test[n] = testProblem (last , repeatBackToMe , items);
 console.log (test[n].result);
 
 ///#####################################
@@ -99,9 +96,8 @@ function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
-test[n].outerFn = sumNums ;
-test[n].innerFn = (val) => (`You gave me:\n${val}`);
-test[n].result  = test[n].outerFn (items , test[n].innerFn);
+test[n] = testProblem (sumNums , repeatBackToMe , items);
+console.log (test[n].result);
 
 ///#####################################
 /// CHALLENGE 4
@@ -113,9 +109,8 @@ function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
 
-test[n].outerFn = multiplyNums ;
-test[n].innerFn = (val) => (`You gave me:\n${val}`);
-test[n].result  = test[n].outerFn (items , test[n].innerFn);
+test[n] = testProblem (multiplyNums , repeatBackToMe , items);
+console.log (test[n].result);
 
 ///#####################################
 /// CHALLENGE 5
@@ -128,9 +123,8 @@ function contains(item, list, cb) {
   // Pass true to the callback if it is, otherwise pass false.
 }
 
-test[n].outerFn = contains ;
-test[n].innerFn = (val) => (`You gave me:\n${val}`);
-test[n].result  = test[n].outerFn (items , test[n].innerFn);
+test[n] = testProblem (contains , repeatBackToMe , items);
+console.log (test[n].result);
 
 ///#####################################
 /// STRETCH -> CHALLENGE
@@ -144,6 +138,5 @@ function removeDuplicates(array, cb) {
   // Do not mutate the original array.
 }
 
-test[n].outerFn = removeDuplicates ;
-test[n].innerFn = (val) => (`You gave me:\n${val}`);
-test[n].result  = test[n].outerFn (items , test[n].innerFn);
+test[n] = testProblem (removeDuplicates , repeatBackToMe , items);
+console.log (test[n].result);
