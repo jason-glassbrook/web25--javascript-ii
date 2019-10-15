@@ -46,6 +46,11 @@ function nextProblem (content) {
   heading (`${content} ${n}`);
   test[n] = {};
 }
+function testProblem (n , outerFn , innerFn , data) {
+  test[n].outerFn = outerFn;
+  test[n].innerFn = innerFn;
+  test[n].result  = outerFn (items , innerFn);
+}
 
 let n = 0;
 const test = [];
