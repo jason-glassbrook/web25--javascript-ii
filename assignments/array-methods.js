@@ -190,10 +190,21 @@ console.log (averageDonation);
 ///#################
 /// Problem 2
 ///-----------------
-/// Get only runners whose company starts with a specific letter.
+/// Get only runners whose company name contains a specific letter (not case sensitive).
 ///#################
 
 heading (`PROBLEM ${m += 1}`);
+
+const letter = "M";
+const runnersFromCompaniesWithLetter = runners.filter(
+  (elem) => {
+    const name = elem.company_name.toLowerCase ();
+    const l = letter.toLowerCase ();
+    return (name.includes (l));
+  }
+);
+
+console.log (runnersFromCompaniesWithLetter);
 
 ///#################
 /// Problem 3
