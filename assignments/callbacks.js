@@ -47,7 +47,7 @@ function getLength (arr, cb) {
   return cb (arr.length);
 }
 
-const test1 = {}
+const test1 = {};
 test1.callback = (len) => (`you gave me: ${len}`);
 test1.result = getLength (items , test1.callback);
 
@@ -57,11 +57,16 @@ console.log (test1.result);
 /// CHALLENGE 2
 ///#####################################
 
-function last(arr, cb) {
+function last (arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb (arr[arr.length - 1]) ;
 }
 
+const test2 = {};
+test2.callback = (len) => (`you gave me: ${len}`);
+test2.result = last (items , test2.callback);
 
+console.log (test2.result);
 
 ///#####################################
 /// CHALLENGE 3
