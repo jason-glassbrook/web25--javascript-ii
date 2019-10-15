@@ -47,4 +47,4 @@ We have learned that closures allow us to access values in scope that have alrea
 ## Stretch Goals
 
 * [ ] Go back through the stretch problems that you skipped over and complete as many as you can.
-* [ ] Look up what an IIFE is in JavaScript and experiment with them
+* [ ] Look up what an IIFE is in JavaScript and experiment with them.
