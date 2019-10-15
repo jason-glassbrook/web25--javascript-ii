@@ -69,7 +69,7 @@ function getLength (arr , cb) {
   return cb (arr.length);
 }
 
-test[n] = testProblem (getLength , repeatBackToMe , items);
+test[n] = testProblem (getLength , repeatBackToMe , [items]);
 console.log (test[n].result);
 
 ///#####################################
@@ -83,7 +83,7 @@ function last (arr , cb) {
   return cb (arr[arr.length - 1]) ;
 }
 
-test[n] = testProblem (last , repeatBackToMe , items);
+test[n] = testProblem (last , repeatBackToMe , [items]);
 console.log (test[n].result);
 
 ///#####################################
@@ -97,7 +97,7 @@ function sumNums (x , y , cb) {
   return cb (x + y);
 }
 
-test[n] = testProblem (sumNums , repeatBackToMe , items);
+test[n] = testProblem (sumNums , repeatBackToMe , [23 , 76]);
 console.log (test[n].result);
 
 ///#####################################
@@ -111,7 +111,7 @@ function multiplyNums (x , y , cb) {
   return cb (x * y);
 }
 
-test[n] = testProblem (multiplyNums , repeatBackToMe , items);
+test[n] = testProblem (multiplyNums , repeatBackToMe , [23 , 76]);
 console.log (test[n].result);
 
 ///#####################################
@@ -126,7 +126,7 @@ function contains (item , list , cb) {
   return cb (item , list);
 }
 
-test[n] = testProblem (contains , repeatBackToMe , items);
+test[n] = testProblem (contains , repeatBackToMe , [items[2] , items]);
 console.log (test[n].result);
 
 ///#####################################
