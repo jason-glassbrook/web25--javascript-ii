@@ -92,7 +92,7 @@ nextProblem ("CHALLENGE");
 
 let fullNames = [];
 
-runners.forEach(
+runners.forEach (
   (item) => {
     fullNames.push (`${item.first_name} ${item.last_name}`);
   }
@@ -110,7 +110,7 @@ nextProblem ("CHALLENGE");
 
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 
-let firstNamesAllCaps = runners.map(
+let firstNamesAllCaps = runners.map (
   (elem) => {
     return (elem.first_name.toUpperCase ());
   }
@@ -128,7 +128,7 @@ nextProblem ("CHALLENGE");
 
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 
-let runnersLargeSizeShirt = runners.filter(
+let runnersLargeSizeShirt = runners.filter (
   (elem) => {
     return (elem.shirt_size === "L");
   }
@@ -147,7 +147,7 @@ nextProblem ("CHALLENGE");
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 
 // Why isn't this called `totalDonations`? :shrug:
-let ticketPriceTotal = runners.reduce(
+let ticketPriceTotal = runners.reduce (
   (init , elem) => {
     return (init + elem.donation);
   }
@@ -181,7 +181,7 @@ const onlyUniqueSet =
 
 heading (`PROBLEM ${m += 1}`);
 
-const averageDonation = runners.reduce(
+const averageDonation = runners.reduce (
   (init , elem) => (init + elem.donation)
 , 0) / runners.length;
 
@@ -196,7 +196,7 @@ console.log (averageDonation);
 heading (`PROBLEM ${m += 1}`);
 
 const letter = "M";
-const runnersFromCompaniesWithLetter = runners.filter(
+const runnersFromCompaniesWithLetter = runners.filter (
   (elem) => {
     const name = elem.company_name.toLowerCase ();
     const l = letter.toLowerCase ();
@@ -209,7 +209,43 @@ console.log (runnersFromCompaniesWithLetter);
 ///#################
 /// Problem 3
 ///-----------------
-/// 
+/// Get donation stats by shirt size.
 ///#################
 
 heading (`PROBLEM ${m += 1}`);
+
+const allShirtSizes = runners.map (
+  (currRunner) => (currRunner.shirt_size)
+);
+// console.log (allShirtSizes);
+
+const uniqueShirtSizes = onlyUniqueSet (allShirtSizes) .sort () ;
+// console.log (uniqueShirtSizes);
+
+const donationsByShirtSize = uniqueShirtSizes.map (
+  (shirtSize) => {
+    //
+    const result = {
+      shirt_size       : shirtSize ,
+      count            : 0 ,
+      total_donations  : 0 ,
+      average_donation : 0
+    };
+    //
+    const runnersWithShirtSize = runners.filter (
+      (currRunner) => (currRunner.shirt_size === shirtSize)
+    );
+    result.count = runnersWithShirtSize.length;
+    //
+    result.total_donations = runnersWithShirtSize.reduce (
+      (init , currRunner) => (init + currRunner.donation)
+    , 0);
+    //
+    result.average_donation = result.total_donations / result.count ;
+    //
+    return (result);
+    //
+  }
+);
+
+console.log (donationsByShirtSize);
