@@ -5,11 +5,13 @@
 function heading (content) {
   console.log (`\n### ${content} ###\n`);
 }
+
 function nextProblem (content) {
   n += 1;
   heading (`${content} ${n}`);
   test[n] = {};
 }
+
 function testProblem (testFn , testArgs , talkFn) {
   return ({
     testFn   : testFn ,
@@ -18,6 +20,7 @@ function testProblem (testFn , testArgs , talkFn) {
     result   : testFn (...testArgs , talkFn)
   });
 }
+
 const repeatAfterMe = (val) => (`You gave me:\n${val}`);
 
 let n = 0;
@@ -36,6 +39,7 @@ nextProblem ("CHALLENGE");
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+// I actually already did this with `nextProblem()` above, but I'll do another one.
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
