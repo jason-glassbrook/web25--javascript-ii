@@ -42,6 +42,8 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 /// CHALLENGE 1
 ///#####################################
 
+console.log ("### CHALLENGE 1 ###");
+
 function getLength (arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb (arr.length);
@@ -56,6 +58,8 @@ console.log (test1.result);
 ///#####################################
 /// CHALLENGE 2
 ///#####################################
+
+console.log ("### CHALLENGE 2 ###");
 
 function last (arr, cb) {
   // last passes the last item of the array into the callback.
