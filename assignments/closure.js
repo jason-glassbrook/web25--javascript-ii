@@ -12,19 +12,7 @@ function nextProblem (content) {
   test[n] = {};
 }
 
-function testProblem (testFn , testArgs , talkFn) {
-  return ({
-    testFn   : testFn ,
-    testArgs : testArgs ,
-    talkFn   : talkFn ,
-    result   : testFn (...testArgs , talkFn)
-  });
-}
-
-const repeatAfterMe = (val) => (`You gave me:\n${val}`);
-
 let n = 0;
-const test = [];
 
 ///#####################################
 /// CHALLENGE 1
