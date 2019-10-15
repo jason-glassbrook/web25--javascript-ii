@@ -38,11 +38,14 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
+let n = 0 ;
+
 ///#####################################
 /// CHALLENGE 1
 ///#####################################
 
-console.log ("### CHALLENGE 1 ###");
+n += 1;
+console.log (`\n### CHALLENGE ${n} ###\n`);
 
 function getLength (arr, cb) {
   // getLength passes the length of the array into the callback.
@@ -59,7 +62,8 @@ console.log (test1.result);
 /// CHALLENGE 2
 ///#####################################
 
-console.log ("### CHALLENGE 2 ###");
+n += 1;
+console.log (`\n### CHALLENGE ${n} ###\n`);
 
 function last (arr, cb) {
   // last passes the last item of the array into the callback.
@@ -76,6 +80,9 @@ console.log (test2.result);
 /// CHALLENGE 3
 ///#####################################
 
+n += 1;
+console.log (`\n### CHALLENGE ${n} ###\n`);
+
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
@@ -86,6 +93,9 @@ function sumNums(x, y, cb) {
 /// CHALLENGE 4
 ///#####################################
 
+n += 1;
+console.log (`\n### CHALLENGE ${n} ###\n`);
+
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
@@ -95,6 +105,9 @@ function multiplyNums(x, y, cb) {
 ///#####################################
 /// CHALLENGE 4
 ///#####################################
+
+n += 1;
+console.log (`\n### CHALLENGE ${n} ###\n`);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
