@@ -29,6 +29,8 @@ const test = [];
 /// Write your own closure
 ///#####################################
 
+nextProblem ("CHALLENGE");
+
 // Write a closure of your own creation.
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
@@ -43,6 +45,8 @@ const test = [];
 ///-------------------------------------
 /// Implement a "counter maker" function
 ///#####################################
+
+nextProblem ("(STRETCH) CHALLENGE");
 
 const counterMaker = () => {
   // IMPLEMENTATION OF counterMaker:
@@ -62,6 +66,8 @@ const counterMaker = () => {
 /// Make `counterMaker` more sophisticated
 ///#####################################
 
+nextProblem ("(STRETCH) CHALLENGE");
+
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
 
@@ -70,6 +76,8 @@ const counterMaker = () => {
 ///-------------------------------------
 /// Create a counter function with an object that can increment and decrement
 ///#####################################
+
+nextProblem ("(STRETCH) CHALLENGE");
 
 const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
