@@ -165,8 +165,13 @@ nextProblem ("CHALLENGE");
 
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
+let m = 0;
+
 // Problem 1
+heading (`PROBLEM ${m += 1}`);
 
 // Problem 2
+heading (`PROBLEM ${m += 1}`);
 
 // Problem 3
+heading (`PROBLEM ${m += 1}`);
