@@ -98,7 +98,7 @@ runners.forEach(
   }
 );
 
-console.log(fullNames);
+console.log (fullNames);
 
 ///#####################################
 /// CHALLENGE 2
@@ -116,7 +116,7 @@ let firstNamesAllCaps = runners.map(
   }
 );
 
-console.log(firstNamesAllCaps);
+console.log (firstNamesAllCaps);
 
 ///#####################################
 /// CHALLENGE 3
@@ -134,7 +134,7 @@ let runnersLargeSizeShirt = runners.filter(
   }
 );
 
-console.log(runnersLargeSizeShirt);
+console.log (runnersLargeSizeShirt);
 
 ///#####################################
 /// CHALLENGE 4
@@ -147,7 +147,7 @@ nextProblem ("CHALLENGE");
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 
 let ticketPriceTotal = 0;
-console.log(ticketPriceTotal);
+console.log (ticketPriceTotal);
 
 ///#####################################
 /// CHALLENGE 5
