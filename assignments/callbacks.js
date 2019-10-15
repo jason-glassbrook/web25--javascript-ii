@@ -38,7 +38,8 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
-let n = 0 ;
+let n = 0;
+const test = [];
 
 ///#####################################
 /// CHALLENGE 1
@@ -52,11 +53,12 @@ function getLength (arr, cb) {
   return cb (arr.length);
 }
 
-const test1 = {};
-test1.callback = (len) => (`you gave me: ${len}`);
-test1.result = getLength (items , test1.callback);
+test[n] = {};
+test[n].outerFn = getLength ;
+test[n].innerFn = (val) => (`You gave me:\n${val}`);
+test[n].result  = test[n].outerFn (items , test[n].innerFn);
 
-console.log (test1.result);
+console.log (test[n].result);
 
 ///#####################################
 /// CHALLENGE 2
@@ -70,11 +72,12 @@ function last (arr, cb) {
   return cb (arr[arr.length - 1]) ;
 }
 
-const test2 = {};
-test2.callback = (len) => (`you gave me: ${len}`);
-test2.result = last (items , test2.callback);
+test[n] = {};
+test[n].outerFn = last ;
+test[n].innerFn = (val) => (`You gave me:\n${val}`);
+test[n].result  = test[n].outerFn (items , test[n].innerFn);
 
-console.log (test2.result);
+console.log (test[n].result);
 
 ///#####################################
 /// CHALLENGE 3
