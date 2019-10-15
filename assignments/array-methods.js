@@ -146,7 +146,13 @@ nextProblem ("CHALLENGE");
 
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 
-let ticketPriceTotal = 0;
+// Why isn't this called `totalDonations`? :shrug:
+let ticketPriceTotal = runners.reduce(
+  (init , elem) => {
+    return (init + elem.donation);
+  }
+, 0);
+
 console.log (ticketPriceTotal);
 
 ///#####################################
