@@ -59,7 +59,7 @@ const counterMaker = (init) => {
   const counter = () => {
     count += 1;
     return count;
-  }
+  };
   // 3- Return the `counter` function.
   return counter;
 };
@@ -68,18 +68,18 @@ const counterMaker = (init) => {
 // myCounter(); // 2
 
 const init1 = 0;
-// const init2 = 10;
+const init2 = 10;
 
 console.log (
-  `initial values: [${init1}]`// [${init2}]`
+  `initial values: [${init1}] [${init2}]`
 );
 
-const myCounter1 = counterMaker ();
-// const myCounter2 = counterMaker ();
+const myCounter1 = counterMaker (init1);
+const myCounter2 = counterMaker (init2);
 
 for (let i = 0 ; i < 5 ; i += 1) {
   console.log (
-    `counter values: [${myCounter1 ()}]`// [${myCounter2 ()}]`
+    `counter values: [${myCounter1 ()}] [${myCounter2 ()}]`
   );
 }
 
