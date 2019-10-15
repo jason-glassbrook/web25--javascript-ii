@@ -46,7 +46,7 @@ function nextProblem (content) {
   heading (`${content} ${n}`);
   test[n] = {};
 }
-function testProblem (testFn , talkFn , testArgs) {
+function testProblem (testFn , testArgs , talkFn) {
   return ({
     testFn   : testFn ,
     testArgs : testArgs ,
@@ -70,7 +70,7 @@ function getLength (arr , cb) {
   return cb (arr.length);
 }
 
-test[n] = testProblem (getLength , repeatAfterMe , [items]);
+test[n] = testProblem (getLength , [items] , repeatAfterMe);
 console.log (test[n].result);
 
 ///#####################################
@@ -84,7 +84,7 @@ function last (arr , cb) {
   return cb (arr[arr.length - 1]) ;
 }
 
-test[n] = testProblem (last , repeatAfterMe , [items]);
+test[n] = testProblem (last , [items] , repeatAfterMe);
 console.log (test[n].result);
 
 ///#####################################
@@ -98,7 +98,7 @@ function sumNums (x , y , cb) {
   return cb (x + y);
 }
 
-test[n] = testProblem (sumNums , repeatAfterMe , [23 , 76]);
+test[n] = testProblem (sumNums , [23 , 76] , repeatAfterMe);
 console.log (test[n].result);
 
 ///#####################################
@@ -112,7 +112,7 @@ function multiplyNums (x , y , cb) {
   return cb (x * y);
 }
 
-test[n] = testProblem (multiplyNums , repeatAfterMe , [23 , 76]);
+test[n] = testProblem (multiplyNums , [23 , 76] , repeatAfterMe);
 console.log (test[n].result);
 
 ///#####################################
@@ -127,7 +127,7 @@ function contains (item , list , cb) {
   return cb (list.includes (item));
 }
 
-test[n] = testProblem (contains , repeatAfterMe , ["Gum" , items]);
+test[n] = testProblem (contains , ["Gum" , items] , repeatAfterMe);
 console.log (test[n].result);
 
 ///#####################################
@@ -142,5 +142,5 @@ function removeDuplicates (array , cb) {
   // Do not mutate the original array.
 }
 
-test[n] = testProblem (removeDuplicates , repeatAfterMe , items);
+test[n] = testProblem (removeDuplicates , items , repeatAfterMe);
 console.log (test[n].result);
