@@ -46,11 +46,11 @@ function nextProblem (content) {
   heading (`${content} ${n}`);
   test[n] = {};
 }
-function testProblem (testFn , innerFn , args) {
+function testProblem (testFn , talkFn , args) {
   return ({
-    testFn  : testFn ,
-    innerFn : innerFn ,
-    result  : testFn (...args , innerFn)
+    testFn : testFn ,
+    talkFn : talkFn ,
+    result : testFn (...args , talkFn)
   });
 }
 const repeatBackToMe = (val) => (`You gave me:\n${val}`);
