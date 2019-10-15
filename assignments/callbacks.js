@@ -48,9 +48,10 @@ function nextProblem (content) {
 }
 function testProblem (testFn , talkFn , testArgs) {
   return ({
-    testFn : testFn ,
-    talkFn : talkFn ,
-    result : testFn (...testArgs , talkFn)
+    testFn   : testFn ,
+    testArgs : testArgs ,
+    talkFn   : talkFn ,
+    result   : testFn (...testArgs , talkFn)
   });
 }
 const repeatAfterMe = (val) => (`You gave me:\n${val}`);
