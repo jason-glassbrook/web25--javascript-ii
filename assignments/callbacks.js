@@ -138,7 +138,7 @@ test[n] = testProblem (contains , ["Gum" , items] , repeatAfterMe);
 console.log (test[n].result);
 
 ///#####################################
-/// STRETCH -> CHALLENGE
+/// STRETCH -> CHALLENGE 6
 ///#####################################
 
 nextProblem ("(STRETCH) CHALLENGE");
@@ -147,7 +147,13 @@ function removeDuplicates (array , cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb (onlyUniqueSet (array));
 }
 
-test[n] = testProblem (removeDuplicates , items , repeatAfterMe);
+const isUnique =
+  (elem , index , array) => (array.indexOf (elem) === index);
+const onlyUniqueSet =
+  (array) => (array.filter (isUnique));
+
+test[n] = testProblem (removeDuplicates , [items.concat(items)] , repeatAfterMe);
 console.log (test[n].result);
