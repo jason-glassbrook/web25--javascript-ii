@@ -38,6 +38,10 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
+///#####################################
+/// TOOLS
+///#####################################
+
 function heading (content) {
   console.log (`\n### ${content} ###\n`);
 }
