@@ -9,7 +9,6 @@ function heading (content) {
 function nextProblem (content) {
   n += 1;
   heading (`${content} ${n}`);
-  test[n] = {};
 }
 
 let n = 0;
@@ -50,17 +49,39 @@ console.log (`\`value\` AFTER \`myClosure()\` is called:\n${value}`);
 
 nextProblem ("(STRETCH) CHALLENGE");
 
-const counterMaker = () => {
+const counterMaker = (init) => {
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
+  let count = init;
   // 2- Declare a function `counter`. It should increment and return `count`.
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
+  const counter = () => {
+    count += 1;
+    return count;
+  }
   // 3- Return the `counter` function.
+  return counter;
 };
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
+
+const init1 = 0;
+const init2 = 10;
+
+console.log (
+  `initial counter values:\n[${init1}] [${init2}]`
+);
+
+const myCounter1 = counterMaker ();
+const myCounter2 = counterMaker ();
+
+for (let i = 0 ; i < 5 ; i += 1) {
+  console.log (
+    `counter values:\n[${myCounter1 ()}] [${myCounter2 ()}]`
+  );
+}
 
 ///#####################################
 /// CHALLENGE 3

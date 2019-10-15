@@ -66,7 +66,6 @@ function heading (content) {
 function nextProblem (content) {
   n += 1;
   heading (`${content} ${n}`);
-  test[n] = {};
 }
 
 let n = 0;
