@@ -42,11 +42,16 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 /// CHALLENGE 1
 ///#####################################
 
-function getLength(arr, cb) {
+function getLength (arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb (arr.length);
 }
 
+const test1 = {}
+test1.callback = (len) => (`you gave me: ${len}`);
+test1.result = getLength (items , test1.callback);
 
+console.log (test1.result);
 
 ///#####################################
 /// CHALLENGE 2
