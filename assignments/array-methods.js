@@ -55,31 +55,187 @@ const runners = [
   { id: 50, first_name: "Shell", last_name: "Baine", email: "sbaine1d@intel.com", shirt_size: "M", company_name: "Gabtype", donation: 171 },
 ];
 
-// ==== Challenge 1: Use .forEach() ====
+///#####################################
+/// TOOLS
+///#####################################
+
+function heading (content) {
+  console.log (`\n### ${content} ###\n`);
+}
+
+function nextProblem (content) {
+  n += 1;
+  heading (`${content} ${n}`);
+}
+
+let n = 0;
+
+///#####################################
+/// CHALLENGE 1
+///-------------------------------------
+/// Use .forEach()
+///#####################################
+
+nextProblem ("CHALLENGE");
+
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
+
 let fullNames = [];
-console.log(fullNames);
 
-// ==== Challenge 2: Use .map() ====
+runners.forEach (
+  (item) => {
+    fullNames.push (`${item.first_name} ${item.last_name}`);
+  }
+);
+
+console.log (fullNames);
+
+///#####################################
+/// CHALLENGE 2
+///-------------------------------------
+/// Use .map()
+///#####################################
+
+nextProblem ("CHALLENGE");
+
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
-let firstNamesAllCaps = [];
-console.log(firstNamesAllCaps);
 
-// ==== Challenge 3: Use .filter() ====
+let firstNamesAllCaps = runners.map (
+  (elem) => {
+    return (elem.first_name.toUpperCase ());
+  }
+);
+
+console.log (firstNamesAllCaps);
+
+///#####################################
+/// CHALLENGE 3
+///-------------------------------------
+/// Use .filter()
+///#####################################
+
+nextProblem ("CHALLENGE");
+
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
-let runnersLargeSizeShirt = [];
-console.log(runnersLargeSizeShirt);
 
-// ==== Challenge 4: Use .reduce() ====
+let runnersLargeSizeShirt = runners.filter (
+  (elem) => {
+    return (elem.shirt_size === "L");
+  }
+);
+
+console.log (runnersLargeSizeShirt);
+
+///#####################################
+/// CHALLENGE 4
+///-------------------------------------
+/// Use .reduce()
+///#####################################
+
+nextProblem ("CHALLENGE");
+
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
-let ticketPriceTotal = 0;
-console.log(ticketPriceTotal);
 
-// ==== Challenge 5: Be Creative ====
+// Why isn't this called `totalDonations`? :shrug:
+let ticketPriceTotal = runners.reduce (
+  (init , elem) => {
+    return (init + elem.donation);
+  }
+, 0);
+
+console.log (ticketPriceTotal);
+
+///#####################################
+/// CHALLENGE 5
+///-------------------------------------
+/// Be Creative
+///#####################################
+
+nextProblem ("CHALLENGE");
+
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+let m = 0;
 
-// Problem 2
+// there are probably more efficient ways of doing this...
+const isUnique =
+  (elem , index , array) => (array.indexOf (elem) === index);
+const onlyUniqueSet =
+  (array) => (array.filter (isUnique));
 
-// Problem 3
+///#################
+/// Problem 1
+///-----------------
+/// Get average donation.
+///#################
+
+heading (`PROBLEM ${m += 1}`);
+
+const averageDonation = runners.reduce (
+  (init , elem) => (init + elem.donation)
+, 0) / runners.length;
+
+console.log (averageDonation);
+
+///#################
+/// Problem 2
+///-----------------
+/// Get only runners whose company name contains a specific letter (not case sensitive).
+///#################
+
+heading (`PROBLEM ${m += 1}`);
+
+const letter = "M";
+const runnersFromCompaniesWithLetter = runners.filter (
+  (elem) => {
+    const name = elem.company_name.toLowerCase ();
+    const l = letter.toLowerCase ();
+    return (name.includes (l));
+  }
+);
+
+console.log (runnersFromCompaniesWithLetter);
+
+///#################
+/// Problem 3
+///-----------------
+/// Get donation stats by shirt size.
+///#################
+
+heading (`PROBLEM ${m += 1}`);
+
+const allShirtSizes = runners.map (
+  (currRunner) => (currRunner.shirt_size)
+);
+// console.log (allShirtSizes);
+
+const uniqueShirtSizes = onlyUniqueSet (allShirtSizes) .sort () ;
+// console.log (uniqueShirtSizes);
+
+const donationsByShirtSize = uniqueShirtSizes.map (
+  (shirtSize) => {
+    //
+    const result = {
+      shirt_size       : shirtSize ,
+      count            : 0 ,
+      total_donations  : 0 ,
+      average_donation : 0
+    };
+    //
+    const runnersWithShirtSize = runners.filter (
+      (currRunner) => (currRunner.shirt_size === shirtSize)
+    );
+    result.count = runnersWithShirtSize.length;
+    //
+    result.total_donations = runnersWithShirtSize.reduce (
+      (init , currRunner) => (init + currRunner.donation)
+    , 0);
+    //
+    result.average_donation = result.total_donations / result.count ;
+    //
+    return (result);
+    //
+  }
+);
+
+console.log (donationsByShirtSize);
